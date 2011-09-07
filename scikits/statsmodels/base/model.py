@@ -78,14 +78,6 @@ class Model(object):
         """
         raise NotImplementedError
 
-    def _attach_results(self, results):
-        """
-        Attaches results with a weakref.
-        """
-        from weakref import ref
-        wr = ref(results)
-        self._results = wr()
-
 class LikelihoodModel(Model):
     """
     Likelihood model is a subclass of Model.

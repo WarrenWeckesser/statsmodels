@@ -83,7 +83,8 @@ class Model(object):
         Attaches results with a weakref.
         """
         from weakref import ref
-        self._results = ref(results)
+        wr = ref(results)
+        self._results = wr()
 
 class LikelihoodModel(Model):
     """

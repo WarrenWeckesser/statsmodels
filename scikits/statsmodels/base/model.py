@@ -651,7 +651,9 @@ class Results(object):
 
     def initialize(self, model, params, **kwd):
         self.params = params
-        self.model = model
+        from weakref import ref
+        wr = ref(model)
+        self.model = wr()
 #TODO: public method?
 
 class LikelihoodModelResults(Results):

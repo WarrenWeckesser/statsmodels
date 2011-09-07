@@ -237,7 +237,7 @@ Should be of length %s, if sigma is a 1d array" % nobs)
             # no upper triangular solve routine in numpy/scipy?
         lfit = RegressionResults(self, beta,
                        normalized_cov_params=self.normalized_cov_params)
-        self._results = lfit
+        self._attach_results(lfit)
         return lfit
 
     def predict(self, exog, params=None):
